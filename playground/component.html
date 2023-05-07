@@ -10,20 +10,28 @@
     <div id="app">
         <app-header></app-header>
         <app-content></app-content>
+        <app-footer></app-footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
         // 전역 컴포넌트
+        // Vue.component('컴포넌트 이름', 컴포넌트 내용);
         Vue.component('app-header', {   // component 등록
             template: '<h1>Header</h1>' // component가 표현되는 마크업/스타일
         }); 
         Vue.component('app-content', {
             template: '<div>content: hyeran\'s Vue.js study</div>'
         })
-
+        
         new Vue({
-            el: '#app' // element -> instance를 생성해서 이 tag에 붙이겠다.
+            el: '#app',     // element -> instance를 생성해서 이 tag에 붙이겠다.
+            components: {   // 지역 컴포넌트
+                // '컴포넌트 이름': 컴포넌트 내용,
+                'app-footer': {
+                    template: '<footer>footer</footer>'
+                }
+            }
         });
     </script>
 </body>
