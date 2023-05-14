@@ -22,6 +22,11 @@
         </div>
         <!-- if와 show의 차이 
             => if는 DOM에서도 제거, show는 태그의 style 속성만 display: none으로 변경 -->
+
+        <!-- TODO: 인풋 박스를 만들고 입력된 값을 p 태그에 출력해보세요 -->
+        <!-- https://vuejs.org/ 에 input 검색 -->
+        <input text="text" v-model="message">
+        <p>{{ message }}</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -32,7 +37,8 @@
                 num: 10,
                 uuid: 'abc1234',
                 name: 'text-blue',
-                loading: true
+                loading: true,
+                message: ''
             },
             computed: {
                 doubleNum: function() {
